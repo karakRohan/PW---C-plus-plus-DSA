@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    // for (int i = 19; i <= 190; i++)
+    for (int i = 19; i <= 190; i=i+19)
+    {
+        // if(i%19==0)
+        cout << i << endl;
+    }
+    // 190-19=171 ber loop ta cholche
+}

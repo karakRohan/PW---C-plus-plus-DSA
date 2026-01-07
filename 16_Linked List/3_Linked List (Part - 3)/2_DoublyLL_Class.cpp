@@ -43,6 +43,7 @@ public:
         }
         size++;
     }
+    
     void insertAtidx(int idx,int val){
         if(idx<0 || idx>size) cout<<"Invalid Index"<<endl;
         else if(idx==0) insertAtHead(val);

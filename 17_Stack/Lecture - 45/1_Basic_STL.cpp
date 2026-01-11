@@ -9,3 +9,4 @@ int main()
     stack1.push(20);
     cout << "Size of stack after pushing 2 elements is: " << stack1.size() << endl;
 }
+

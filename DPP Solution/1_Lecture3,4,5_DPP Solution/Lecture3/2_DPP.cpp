@@ -2,9 +2,8 @@
 using namespace std;
 int main()
 {
-    int radius ;
+    int radius;
     cout << "Enter The Radius : ";
     cin >> radius;
     float area = 3.14 * radius * radius;
-    float
 }

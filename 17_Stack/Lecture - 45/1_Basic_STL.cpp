@@ -18,7 +18,7 @@ int main()
     // cout<<stack1.empty()<<endl;
     // return 0;
 
-    // printing in reverse order
+    // printing in reverse order :- Empty in the Stack
     while (stack1.size()>0)
     {
         cout << stack1.top() << " ";

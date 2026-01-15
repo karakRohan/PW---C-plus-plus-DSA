@@ -32,7 +32,7 @@ int main()
     stack<int> temp;
     while (stack1.size()>0)
     {
-        cout << stack1.top() << " ";
+        // cout << stack1.top() << " ";
         // int x = stack1.top();
         temp.push(stack1.top());
         stack1.pop();
@@ -45,6 +45,7 @@ int main()
         // int x = temp.top();
         // temp.pop();
         // stack1.push(x);
+        cout<<temp.top()<<" ";
         stack1.push(temp.top());
         temp.pop();
     }

@@ -4,8 +4,17 @@ using namespace std;
 void displayRev(stack<int>& stack1){
     if(stack1.size()==0) return;
     int x = stack1.top();
+    cout << x << " ";
     stack1.pop();
     displayRev(stack1);
+    stack1.push(x);
+}
+
+void display(stack<int>& stack1){
+    if(stack1.size()==0) return;
+    int x = stack1.top();
+    stack1.pop();
+    display(stack1);
     cout << x << " ";
     stack1.push(x);
 }
@@ -18,7 +27,7 @@ int main(){
     stack1.push(40);
     stack1.push(50);
 
-    displayRev(stack1);
+    display(stack1);
 
     return 0;
 }

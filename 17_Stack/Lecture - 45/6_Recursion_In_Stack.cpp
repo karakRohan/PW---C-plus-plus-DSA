@@ -4,7 +4,6 @@ using namespace std;
 void displayRev(stack<int>& stack1){
     if(stack1.size()==0) return;
     int x = stack1.top();
-    cout << x << " ";
     stack1.pop();
     displayRev(stack1);
     stack1.push(x);

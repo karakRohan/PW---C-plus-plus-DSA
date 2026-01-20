@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void display(stack<int>& stack1){
+void displayRev(stack<int>& stack1){
     if(stack1.size()==0) return;
     int x = stack1.top();
     cout << x << " ";
     stack1.pop();
-    display(stack1);
+    displayRev(stack1);
     stack1.push(x);
 }
 
@@ -18,7 +18,7 @@ int main(){
     stack1.push(40);
     stack1.push(50);
 
-    display(stack1);
+    displayRev(stack1);
 
     return 0;
 }

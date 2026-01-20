@@ -6,6 +6,7 @@ void displayRev(stack<int>& stack1){
     int x = stack1.top();
     stack1.pop();
     displayRev(stack1);
+    cout << x << " ";
     stack1.push(x);
 }
 

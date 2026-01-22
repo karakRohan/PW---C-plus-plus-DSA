@@ -1,45 +1,65 @@
 #include <iostream>
 using namespace std;
 
-class Stack { // User defined data structure
+class Stack
+{ // User defined data structure
 public:
     int arr[5];
     int idx;
-    Stack(){
+    Stack()
+    {
         idx = -1;
-    } 
-    void push(int val){
-        if(idx == 4){
-            cout<<"Stack is Full"<<endl;
+    }
+    void push(int val)
+    {
+        if (idx == sizeof(arr) / sizeof(arr[0]) - 1)
+        {
+            cout << "Stack is Full !!!" << endl;
             return;
         }
         idx++;
         arr[idx] = val;
     }
-    void pop(){
+    void pop()
+    {
+        if (idx == -1)
+        {
+            cout << "Stack is Empty !!!" << endl;
+            return;
+        }
         idx--;
     }
-    int top(){
+    int top()
+    {
+        if (idx == -1)
+        {
+            cout << "Stack is Empty !!!" << endl;
+            return -1;
+        }
         return arr[idx];
     }
-    int size(){
+    int size()
+    {
         return idx + 1;
-    }   
+    }
 };
-int main(){
+
+int main()
+{
     Stack stack1;
+    cout << stack1.top() << endl; // Stack is Empty !!!
     stack1.push(10);
     stack1.push(20);
     stack1.push(30);
     stack1.push(40);
     stack1.push(50);
-    stack1.push(60); // Stack is Full
-    cout<<stack1.size()<<endl; // 5
+    stack1.push(60);               // Stack is Full
+    cout << stack1.size() << endl; // 5
+    cout << stack1.top() << endl;  // 50
 
     // cout<<stack1.top()<<endl;  // 40
     // cout<<stack1.size()<<endl; // 4
     // stack1.pop();  // 40
     // cout<<stack1.size()<<endl; // 3
     // cout<<stack1.top()<<endl;  // 30
-
 }

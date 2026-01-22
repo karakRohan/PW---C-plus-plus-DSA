@@ -42,6 +42,14 @@ public:
     {
         return idx + 1;
     }
+    void display()
+    {
+        for (int i = 0; i <= idx; i++)
+        {
+            cout << arr[i] << " ";
+        }
+        cout << endl;
+    }
 };
 
 int main()
@@ -56,6 +64,7 @@ int main()
     stack1.push(60);               // Stack is Full
     cout << stack1.size() << endl; // 5
     cout << stack1.top() << endl;  // 50
+    stack1.display();              // 10 20 30 40 50
 
     // cout<<stack1.top()<<endl;  // 40
     // cout<<stack1.size()<<endl; // 4

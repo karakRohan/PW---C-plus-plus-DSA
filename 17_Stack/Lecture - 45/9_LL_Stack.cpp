@@ -13,11 +13,10 @@ public:
     }
 };
 
-
 class Stack
 { // User defined data structure
 public:
-    Node* head;
+    Node *head;
     int size;
     Stack()
     {
@@ -26,7 +25,7 @@ public:
     }
     void push(int val)
     {
-        Node* temp = new Node(val);
+        Node *temp = new Node(val);
         temp->next = head;
         head = temp;
         size++;
@@ -50,7 +49,7 @@ public:
         }
         return head->val;
     }
-    void print(Node* temp)
+    void print(Node *temp)
     {
         if (temp == NULL)
         {
@@ -61,7 +60,7 @@ public:
     }
     void display()
     {
-        Node* temp = head;
+        Node *temp = head;
         print(temp);
         cout << endl;
     }
@@ -76,8 +75,8 @@ int main()
     stack1.push(30);
     stack1.push(40);
     stack1.push(50);
-    stack1.push(60);               // Stack is Full
-    cout << stack1.size << endl; // 5
-    cout << stack1.top() << endl;  // 50
-    stack1.display();              // 10 20 30 40 50
+    stack1.push(60);              // Stack is Full
+    cout << stack1.size << endl;  // 5
+    cout << stack1.top() << endl; // 50
+    stack1.display();             // 10 20 30 40 50
 }

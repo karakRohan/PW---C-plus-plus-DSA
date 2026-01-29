@@ -14,6 +14,7 @@ string removeDuplicates(string s)
         s += st.top();
         st.pop();
     }
+    reverse(s.begin(), s.end());    
     return s;
 }
 

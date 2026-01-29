@@ -3,13 +3,15 @@ using namespace std;
 
 string removeDuplicates(string s)
 {
-    
+
 }
 
 int main()
 {
-    string s = "()()(";
-    cout << isBalanced(s) << endl;
+    string s = "aaabcddaabffg";
+    cout << s << endl;
+    s = removeDuplicates(s);
+    cout << s << endl;
 }
 
 // 1 = True

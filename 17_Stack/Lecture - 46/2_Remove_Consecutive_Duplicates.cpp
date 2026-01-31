@@ -16,7 +16,7 @@ string removeDuplicates(string s)
     }
     reverse(s.begin(), s.end());    
     return s;
-}
+}  
 
 int main()
 {

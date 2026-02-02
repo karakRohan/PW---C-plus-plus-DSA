@@ -23,7 +23,6 @@ int main(){
         }
         
         
-
         // ANS [Mark the ANS is pgi array]
         if(stack1.size()==0) pgi[i] = -1;
         else pgi[i] = stack1.top();

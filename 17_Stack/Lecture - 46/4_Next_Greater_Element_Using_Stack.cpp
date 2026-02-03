@@ -7,11 +7,12 @@ int main(){
         cout<<arr[i]<<"  ";
     }
     cout<<endl;
-    // Next Greater Element (nge) - Brute Force Approach
-    int nge[n];
+    
 
     // Using a Stack : [POP , ANS , PUSH] & reverse Traverse
     // SC = O(n) , TC = O(n)
+    // Next Greater Element (nge) - Brute Force Approach
+    int nge[n];
     stack<int> stack1;
     nge[n-1] = -1;
     stack1.push(arr[n-1]);

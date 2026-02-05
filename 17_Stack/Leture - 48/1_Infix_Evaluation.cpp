@@ -20,6 +20,7 @@ int solve(int val1, int val2, char ch)
     else
         return val1 / val2;
 }
+
 int main()
 {
     string s = "2+6*4/8-3"; // Infix Expression
@@ -55,7 +56,7 @@ int main()
             }
         }
     }
-    
+
     // The Operators Stack Can have values.
     // So make it empty
     while (ops.size() > 0)

@@ -1,34 +1,41 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isOperator(char ch){
-    return (ch=='+' || ch=='-' || ch=='*' || ch=='/');
+string solve(string val1, string val2, char ch)
+{
+    // prefix to postfix format:  (val1 operator val2)
+    // Infix format:  (val1 val2 operator)
+    string s = "";
+    s += val1;
+    s += val2;
+    s.push_back(ch);
+    return s;
 }
 
 int main()
 {
-    string s = "-/*+ABCD";   // Prefix Expression
-
-    stack<string> values;   // same idea, শুধু string stack
-
-    // Reverse traversal (right → left)
-    for(int i = s.length()-1; i >= 0; i--)
+    string s = "-/*+79483"; // Prefix Expression
+    // We need onr stacks -> values
+    stack<string> values;
+    for (int i = s.length() - 1; i >= 0; i--) // Reverse Looping
     {
-        if(!isOperator(s[i]))   // operand
-        {
-            string temp(1, s[i]);
-            values.push(temp);
+        // check if s[i] is a digit (0-9)
+        if (s[i] >= 48 && s[i] <= 57)
+        {                           // Digit
+            values.push(to_string(s[i] - 48)); // Convert char to int and push into values stack
         }
-        else   // operator
-        {
-            string val1 = values.top(); values.pop();
-            string val2 = values.top(); values.pop();
-
-            // Prefix → Postfix format:  val1 val2 operator
-            string ans = val1 + val2 + s[i];
+        else
+        { // s[i] it is -> *, /, +, -
+            // Kaam karo
+            string val1 = values.top();
+            values.pop();
+            string val2 = values.top();
+            values.pop();
+            string ans = solve(val1, val2, s[i]);
             values.push(ans);
         }
     }
 
-    cout << "Postfix Expression : " << values.top() << endl;
+    
+    cout << "The Result of Prefix Evaluation is : " << values.top() << endl;
 }

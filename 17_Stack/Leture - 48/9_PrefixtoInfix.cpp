@@ -1,35 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isOperator(char ch){
-    return (ch=='+' || ch=='-' || ch=='*' || ch=='/');
+bool isOperator(char ch) {
+    return (ch == '+' || ch == '-' || ch == '*' || ch == '/');
 }
 
-int main()
-{
-    string s = "-/*+79483"; // Prefix Expression
+int main() {
 
-    stack<string> values;   // <-- only this change
+    string s = "*-A/BC-/AKL";   // Prefix Expression
+    stack<string> values;
 
-    for (int i = s.length() - 1; i >= 0; i--) // SAME reverse loop
-    {
-        if (!isOperator(s[i]))   // SAME check as your digit check
-        {
-            string temp(1, s[i]);  
+    // Traverse from right to left (important for Prefix)
+    for (int i = s.length() - 1; i >= 0; i--) {
+
+        // If operand
+        if (!isOperator(s[i])) {
+            string temp(1, s[i]);
             values.push(temp);
         }
-        else
-        {
-            // SAME pop pattern as your evaluation code
-            string val1 = values.top(); 
-            values.pop();
-            string val2 = values.top(); 
-            values.pop();
+        else {
+            // Operator → pop two values
+            string val1 = values.top(); values.pop();
+            string val2 = values.top(); values.pop();
 
+            // Form infix expression
             string ans = "(" + val1 + s[i] + val2 + ")";
             values.push(ans);
         }
     }
 
-    cout << "Infix Expression : " << values.top() << endl;
+    cout << "Infix Expression: " << values.top() << endl;
 }

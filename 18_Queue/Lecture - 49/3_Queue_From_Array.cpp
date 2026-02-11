@@ -4,9 +4,9 @@ using namespace std;
 class Queue
 {
 public:
-    int f;
-    int b;
-    int s;
+    int f; // f = front
+    int b; // b = back
+    int s; // s = size
     vector<int> arr;
     Queue(int val)
     {

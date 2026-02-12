@@ -12,6 +12,7 @@ void display(queue<int> q){
     cout<<endl;
 }
 
+
 void reversek(int k, queue<int>& q){
     stack<int> st;
     for(int i=1;i<=k;i++){

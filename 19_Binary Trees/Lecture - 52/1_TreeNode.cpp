@@ -36,6 +36,11 @@ int maxInTree(Node* root){
     return max(root->val, max(lmax, rmax));
 }
 
+int levels(Node* root){
+    if(root==NULL) return 0;
+    return 1 + max(levels(root->left), levels(root->right));
+}
+
 int main(){
     Node* a = new Node(1); // root node
     Node* b = new Node(2);
@@ -56,4 +61,5 @@ int main(){
     cout<<"Sum of all nodes: "<<sum(a)<<endl;
     cout<<"Size of the tree: "<<size(a)<<endl; 
     cout<<"Max in the tree: "<<maxInTree(a)<<endl;
+    cout<<"Levels in the tree: "<<levels(a)<<endl;
 }

@@ -12,12 +12,11 @@ public:
     }
 };
 
-void preorder(Node* root){
+void inorder(Node* root){
     if(root==NULL) return; // base case: if the node is null, return
-    cout<<root->val<<" "; //(Root) PreOrder //work: print the value of the current node
-    preorder(root->left); // (left) call - 1.. the function recursively on the left subtree
-    // cout<<root->val<<" "; // InOrder // work
-    preorder(root->right); //(Right) call - 2.. the function recursively on the right subtree
+    inorder(root->left); // (left) call - 1.. the function recursively on the left subtree
+    cout<<root->val<<" "; //(Root) InOrder //work: print the value of the current node
+    inorder(root->right); //(Right) call - 2.. the function recursively on the right subtree
     // cout<<root->val<<" "; // PostOrder  // work
 }
 
@@ -36,6 +35,6 @@ int main(){
     b->right=e;
     c->left=f;
     c->right=g;
-    preorder(a);
+    inorder(a);
     cout<<endl;
 }

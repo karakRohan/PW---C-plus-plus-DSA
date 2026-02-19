@@ -27,10 +27,20 @@ void nthLevel(Node* root, int curr, int level){
     nthLevel(root->right, curr+1, level); // right
 }
 
+void nthLevelRev(Node* root, int curr, int level){
+    if(root==NULL) return; // base case
+    if(curr==level){
+        cout<<root->val<<" "; // root
+        return;
+    }
+    nthLevelRev(root->left, curr+1, level); // left
+    nthLevelRev(root->right, curr+1, level); // right
+}
+
 void levelOrder(Node* root){
     int n = levels(root);
     for(int i=1; i<=n; i++){
-        nthLevel(root, 1, i);
+        nthLevel (root, 1, i);
         cout<<endl;
     }
 }

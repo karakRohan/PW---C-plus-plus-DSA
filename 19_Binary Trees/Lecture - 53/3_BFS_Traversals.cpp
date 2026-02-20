@@ -45,6 +45,19 @@ void levelOrder(Node* root){
     }
 }
 
+void levelOrderQueue(Node* root){ // BFS 
+    queue<Node*> q;
+    q.push(root);
+    while(q.size()>0){
+        Node* temp = q.front();
+        q.pop();
+        cout<<temp->val<<" ";
+        if(temp->left) q.push(temp->left);
+        if(temp->right) q.push(temp->right);
+    }
+    cout<<endl;
+}
+
 int main(){
     Node* a = new Node(1); // root node
     Node* b = new Node(2);
@@ -65,5 +78,5 @@ int main(){
     // nthLevel(a, 1,2);
     // nthLevel(a, 1,3);
     // nthLevel(a, 1,4);
-    levelOrder(a);
+    levelOrderQueue(a);
 }

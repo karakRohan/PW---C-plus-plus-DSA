@@ -25,7 +25,8 @@ Node* construct(int arr[], int n){
         Node* r; // r = right child
         if(arr[i] != INT_MIN) l = new Node(arr[i]);
         else l = NULL;
-        if(j != n && arr[j] != INT_MIN) r = new Node(arr[j]);
+        if(j != n && arr[j] != INT_MIN) r = new Node(arr[j]); // j != n is important to avoid out of bound error
+        // j != n is important because if the number of nodes is odd then there will be no right child for the last node and we will get out of bound error if we try to access arr[j]
         else r = NULL;
 
         temp ->left = l;

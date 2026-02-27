@@ -13,7 +13,6 @@ public:
 };
 
 
-
 void displayTree(Node* root){
     if(root==NULL) return;
     cout<<root->val<<" ";

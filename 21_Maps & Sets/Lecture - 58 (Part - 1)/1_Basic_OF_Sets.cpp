@@ -1,27 +1,36 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    unordered_set<int> s; // This is a set of integers
-    s.insert(1);
-    s.insert(2);
-    s.insert(3);
-    s.insert(4);
-    s.insert(5);
-    s.insert(1); // This will not be added to the set as it is a duplicate
-    s.insert(0);
-    s.erase(3); // This will remove the element 3 from the set
 
-    int target = 4;
-    // s.find() -> it searches int the set, and if
-    // it is not found then it returns the last element
-    if(s.find(target) != s.end()){ // target exists
-        cout<<"exists"<<endl;
-    }
-    else cout<<"does not exist"<<endl;
+    // pair<string,char> p;
+    // p.first = "abc";
+    // p.second = 'd';
+    // cout<<p.first<<" "<<p.second<<endl;
 
-    cout<<"Array size is : "<<s.size()<<endl; // This will print the size of the set, which is 6
-    // for each loop
-    for(int element : s){
-        cout<<element<<" ";
+    unordered_map<string, int> m; // This is a map of integers to integers
+    pair<string,int> p1;
+    p1.first = "Raghav";
+    p1.second = 76;
+    m.insert(p1);
+
+    m["Harsh"] = 85;
+    m["Sanket"] = 80;
+    // for(pair <string,int> p : m){
+    //     cout<<p.first<<" "<<p.second<<endl;
+    // }
+
+    for(auto p : m){
+        cout<<p.first<<" "<<p.second<<endl;
     }
+
+    cout<<m.size()<<endl; // This will print the size of the map, which is 3
+
+    //delete
+    m.erase("Raghav"); // This will remove the key "Raghav" from the map
+    m.erase("Sanket"); // This will remove the key "Sanket" from the map
+    for(auto p : m){
+        cout<<p.first<<" "<<p.second<<endl;
+    }
+
+    cout<<m.size()<<endl; // This will print the size of the map, which is 1
 }

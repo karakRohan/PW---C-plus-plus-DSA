@@ -82,7 +82,7 @@ public:
 };
 
 int main(){
-    MaxHeap pq;
+    MaxHeap pq; // pq = Priority Queue
 
     pq.push(10);
     pq.push(20);

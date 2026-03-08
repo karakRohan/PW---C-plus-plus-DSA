@@ -70,7 +70,7 @@ public:
 };
 
 int main(){
-    MinHeap pq;
+    MinHeap pq; // pq = Priority Queue
     pq.push(10);
     pq.push(20);
     pq.push(11);

@@ -25,8 +25,47 @@ public:
             i = parent;
         }
     }
+    // Pop the top element and rearrange the heap
+    void pop(){
+        idx--;
+        arr[1] = arr[idx];
+        // Rearranging the heap
+        int i = 1;
+        while(true){
+            int left = 2*i, right = 2*i + 1;
+            if(left > idx-1) break; 
+            if(right > idx-1){ // Only left child is present
+                if(arr[i]>arr[left]){  
+                    swap(arr[i], arr[left] );
+                    i = left;
+                }
+                break;
+            }
+            if (arr[left]<arr[right]){
+                if(arr[i]>arr[left]){  
+                    swap(arr[i], arr[left] );
+                    i = left;
+                }
+                else break;
+            }
+            else{
+                if(arr[i]>arr[right]){  
+                    swap(arr[i], arr[right] );
+                    i = right;
+                }
+                else break;
+            }
+        }
+    }
+
     int size(){
         return idx-1;
+    }
+    void display(){
+        for(int i=1; i<=idx-1; i++){
+            cout<<arr[i]<<" ";
+        }
+        cout<<endl;
     }
 };
 
@@ -43,5 +82,11 @@ int main(){
     pq.push(2);   
     cout<<"Size of Min Heap :- "<<pq.size()<<endl;
     cout<<"Top Element :- "<<pq.top()<<endl; 
+    pq.display();
+
+    pq.pop();
+    cout<<"Size of Min Heap :- "<<pq.size()<<endl;
+    cout<<"Top Element :- "<<pq.top()<<endl;
+    pq.display();
 
 }

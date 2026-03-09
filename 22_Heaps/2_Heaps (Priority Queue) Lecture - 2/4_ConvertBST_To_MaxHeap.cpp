@@ -13,60 +13,53 @@ public:
     }
 };
 
-void inorder(Node* root, vector<int>& arr){
-    if(root == NULL) return;
-    inorder(root->right, arr);
-    arr.push_back(root->val);
-    inorder(root->left, arr);
+int sizeOfTree(Node* root){
+    if(root == NULL) return 0;
+    return 1 + sizeOfTree(root->left) + sizeOfTree(root->right);
 }
 
-void preorder(Node* root, vector<int>& arr, int& i){
-    if(root == NULL) return;
-    root->val = arr[i++];
-    preorder(root->left, arr, i);
-    preorder(root->right, arr, i);
-}
-
-// void print(vector<int> arr){
-//     for(int i=0; i<arr.size(); i++){
-//         cout<<arr[i]<<" ";
-//     }
-//     cout<<endl;
-// }
-
-void levelOrderQueue(Node* root){ // BFS Traversal -> VIMP
-    if(root == NULL) return;
+bool isCBT(Node* root){ // BFS Traversal -> VIMP
+    int size = sizeOfTree(root);
+    int count = 0;
+    //if(root == NULL) return;
     queue<Node*> q;
     q.push(root);
-    while(q.size()>0){
+    while(count<size){
         Node* temp = q.front();
         q.pop();
-        cout<<temp->val<<" ";
-        if(temp->left != NULL) q.push(temp->left);
-        if(temp->right != NULL) q.push(temp->right);
+        count++;
+        if(temp != NULL){
+            q.push(temp->left);
+            q.push(temp->right);
+        }
+        if(q.size()>0){
+            Node* temp = q.front();
+            if(temp != NULL) return false;
+            q.pop();
+        }
+        return true;
     }
-    cout<<endl;
+}
+bool isMax(Node* root){
+    if(root == NULL) return true;
+    if(root->left != NULL && root->val<root->left->val) return false;
+    if(root->right != NULL && root->val<root->right->val) return false;
+    return isMax(root->left) && isMax(root->right);
 }
 
 int main(){
-    Node* a = new Node(10);
-    Node* b = new Node(5);
-    Node* c = new Node(16);     
-    Node* d = new Node(1);
-    Node* e = new Node(8);
-    Node* f = new Node(12);
+    Node* a = new Node(20); // Root Node
+    Node* b = new Node(15);
+    Node* c = new Node(10);     
+    Node* d = new Node(8);
+    Node* e = new Node(11);
+    Node* f = NULL;
     Node* g = new Node(20);
     a->left = b; a->right = c;
     b->left = d; b->right = e;
     c->left = f; c->right = g;
-    vector<int> arr; // Reverse Inorder Traversal
-    inorder(a, arr);    
-    levelOrderQueue(a);
-    // print (arr);
-    // cout<<endl;
-    int i = 0;
-    preorder(a, arr, i); // BST Bana Hai -> Max Heap
-    // print(arr);
-    levelOrderQueue(a);
-
+    cout<<isMax(a)<<endl;
+    // Solution
+    if(isCBT(a) && isMax(a)) cout<<" Tree is a Max Heap"<<endl;
+    else cout<<" Tree is not a Max Heap"<<endl;
 }

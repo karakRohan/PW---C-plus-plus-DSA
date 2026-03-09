@@ -20,6 +20,34 @@ void inorder(Node* root, vector<int>& arr){
     inorder(root->left, arr);
 }
 
+void preorder(Node* root, vector<int>& arr, int& i){
+    if(root == NULL) return;
+    root->val = arr[i++];
+    preorder(root->left, arr, i);
+    preorder(root->right, arr, i);
+}
+
+// void print(vector<int> arr){
+//     for(int i=0; i<arr.size(); i++){
+//         cout<<arr[i]<<" ";
+//     }
+//     cout<<endl;
+// }
+
+void levelOrderQueue(Node* root){ // BFS Traversal -> VIMP
+    if(root == NULL) return;
+    queue<Node*> q;
+    q.push(root);
+    while(q.size()>0){
+        Node* temp = q.front();
+        q.pop();
+        cout<<temp->val<<" ";
+        if(temp->left != NULL) q.push(temp->left);
+        if(temp->right != NULL) q.push(temp->right);
+    }
+    cout<<endl;
+}
+
 int main(){
     Node* a = new Node(10);
     Node* b = new Node(5);
@@ -33,7 +61,12 @@ int main(){
     c->left = f; c->right = g;
     vector<int> arr; // Reverse Inorder Traversal
     inorder(a, arr);    
-    for(int i=0; i<arr.size(); i++){
-        cout<<arr[i]<<" ";
-    }
+    levelOrderQueue(a);
+    // print (arr);
+    // cout<<endl;
+    int i = 0;
+    preorder(a, arr, i); // BST Bana Hai -> Max Heap
+    // print(arr);
+    levelOrderQueue(a);
+
 }

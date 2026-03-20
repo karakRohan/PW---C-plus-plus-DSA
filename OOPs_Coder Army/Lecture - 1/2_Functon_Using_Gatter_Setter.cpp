@@ -11,6 +11,10 @@ class Student{
     // Function using getter and setter
     public:
     void setName(string s){
+       if(s.size()==0){
+        cout<<"Invalid Name : ";
+          return; 
+       } 
        name = s;
     }
     void setAge(int a){

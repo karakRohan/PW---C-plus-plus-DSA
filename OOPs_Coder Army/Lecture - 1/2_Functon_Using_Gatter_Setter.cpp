@@ -33,8 +33,12 @@ class Student{
     void getName(){
         cout<<name<<endl;
     }
-    void getAge(){
-        cout<<age<<endl;
+    void getAge(int a){
+        if(age<0 || age>100){
+            cout<<"Invalid Age : ";
+            return;
+        }
+        age = a;
     }
     void getRollNo(){
         cout<<roll_no<<endl;
@@ -48,6 +52,15 @@ class Student{
     int getroll_no(){
         return roll_no;
     }
+
+    string get_Grade(int pin){
+        if(pin == 1234){
+            return Grade;
+        }
+        else{
+            return "Invalid Pin";
+        }
+    }
 };
 
 int main(){
@@ -59,7 +72,7 @@ int main(){
     s1.setCompanyName("Google");   
 
     s1.getName();
-    s1.getAge();
+    // s1.getAge();
     s1.getRollNo();
     s1.getGrade();
     s1.getCompanyName();
@@ -67,4 +80,5 @@ int main(){
     cout<<endl;
     cout<<"Roll No: "<<s1.getroll_no()<<endl;
 
+    cout<<"Grade: "<<s1.get_Grade(1234)<<endl;
 }

@@ -19,6 +19,7 @@ int f(int x){ // f = function, x = amount
     return dp[x] = 1 + result;
 }
 
+
 int main(){
     int n , x;
     cin >> n >> x;

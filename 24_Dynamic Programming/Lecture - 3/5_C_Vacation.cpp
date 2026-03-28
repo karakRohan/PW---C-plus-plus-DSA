@@ -28,7 +28,6 @@ int main(){
     }
 
 
-    
     cout << max({dp[n-1][0], dp[n-1][1], dp[n-1][2]}) << endl;
 
     return 0;

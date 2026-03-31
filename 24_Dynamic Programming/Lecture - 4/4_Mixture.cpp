@@ -32,7 +32,22 @@ ll f(vector<int> &colors, int i, int j){
 
 // Bottom up approach
 ll fbu(vector<int> &colors){
-    
+    memset(dp, 0, sizeof(dp));
+    int n = colors.size();
+    for(int len = 2; len <= n; len++){
+        for(int i = 0; i <= n - len; i++){
+            int j = i + len - 1;
+            ll result = INT_MAX;
+            for(int k = i; k <= j-1; k++){
+                result = min(result,
+                     dp[i][k] +
+                     dp[k+1][j] +
+                     g(i, k) * g(k+1, j));
+            }
+            dp[i][j] = result;
+        }
+    }
+    return dp[0][n-1];
 }
 
 int main(){
@@ -58,9 +73,23 @@ int main(){
             }
         }
 
-        cout << f(colors, 0, n-1) << endl;
+        // cout << f(colors, 0, n-1) << endl;
+        cout << fbu(colors) << endl;
         colors.clear();
     }
 
     return 0;
 }
+
+
+
+
+
+// input :- 
+// 2
+// 18 19
+// 3
+// 40 60 20
+
+// O/p :-
+// 2400

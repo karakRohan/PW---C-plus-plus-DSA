@@ -11,12 +11,12 @@ public:
     Customer()
     {
         cout << "Constructor is called\n";
-        name = "Arhan";
+        name = "Rohan";
         data = new int;
         *data = 10;
     }
     // Destructor
-    ~Customer()
+    ~Customer() // ~ is used to declare a destructor
     {
         delete data;
         cout << "Destructor is called\n";

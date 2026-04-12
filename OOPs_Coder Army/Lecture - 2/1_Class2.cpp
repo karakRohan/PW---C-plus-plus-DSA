@@ -25,11 +25,16 @@ public:
     }
 
     // Constructor with 2 parameters
-    Customer(string a, int b)
+    Customer(string a, int b)// Constructor overloading
     {
         name = a;
         account_number = b;
         balance = 0;
+    }
+
+    // Inline Constructor
+    inline Customer(string a, int b, int c): name(a), account_number(b), balance(c) {
+
     }
 
     void display()
@@ -45,7 +50,7 @@ int main()
 {
     Customer A1;                      // Default constructor
     Customer A2("Rohit", 10, 50000); // Parameterized
-    Customer A3("Raj", 15, 75000);   // Parameterized
+    Customer A3("Rohan", 15, 75000);   // Parameterized
 
     A1.display();
     A2.display();

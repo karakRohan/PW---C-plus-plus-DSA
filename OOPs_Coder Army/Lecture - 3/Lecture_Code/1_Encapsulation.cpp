@@ -21,6 +21,7 @@ public:
         total_balance += balance;
     }
 
+    // Static member function to access static members
     static void access_static()
     {
         cout << "Total Number of Customer: " << total_customer << endl;
@@ -47,6 +48,7 @@ public:
         }
     }
 
+    // Getter and Setter for age
     void updateAge(int age)
     {
         if (age > 0 && age < 100)

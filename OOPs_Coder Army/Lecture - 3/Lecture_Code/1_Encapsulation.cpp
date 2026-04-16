@@ -65,6 +65,7 @@ public:
     }
 };
 
+// Static members must be defined outside the class 
 int Customer::total_customer = 0;
 int Customer::total_balance = 0;
 

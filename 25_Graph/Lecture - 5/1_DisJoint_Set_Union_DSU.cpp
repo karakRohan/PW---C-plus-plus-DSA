@@ -22,7 +22,6 @@ void Union(vector<int> &parent, vector<int> &rank, int a, int b) {
     }
 }
 
-
 int main(){
 
     int n, m;

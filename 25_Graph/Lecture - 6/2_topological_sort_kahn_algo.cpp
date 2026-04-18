@@ -43,7 +43,6 @@ void topoBFS() {
             }
         }
     }
-
 } 
 
 int main() {

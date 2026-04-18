@@ -17,7 +17,7 @@ void topoBFS() {
     for(int i = 0 ; i < v; i++) {
         for(auto neighbour : graph[i]) {
             // i ---> neighbour
-            indegree[neighbour]++;
+            indegree[neighbour]++; // indegree of neighbour is increased by 1
         }
     }
     queue<int> qu;
@@ -25,7 +25,7 @@ void topoBFS() {
     for(int i = 0; i < v; i++) {
         if(indegree[i] == 0) {
             qu.push(i);
-            vis.insert(i);
+            vis.insert(i); // vis :- visited set 
         }
     }
     cout<<"starting bfs\n";
@@ -69,4 +69,21 @@ int main() {
  * 
  * 
  * graph[i].push_back(j);
+*/
+
+
+/*
+input 
+6 6
+0 1
+0 2
+1 3
+2 3
+3 4
+4 5
+
+output
+starting bfs
+0 1 2 3 4 5
+
 */

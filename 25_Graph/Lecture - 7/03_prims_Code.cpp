@@ -24,7 +24,7 @@ ll prims(int src, int n) {
     int total_count = 0; // 0 -> n-1 edges
     int result = 0; // sum of wts
     while(total_count < n && !pq.empty()) {
-        pp curr = pq.top();
+        pp curr = pq.top(); // {wt, node}
         if(vis.count(curr.second)) {
             pq.pop();
             continue;

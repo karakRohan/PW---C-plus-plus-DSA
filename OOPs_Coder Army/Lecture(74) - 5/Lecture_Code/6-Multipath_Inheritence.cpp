@@ -51,7 +51,7 @@ public:
 int main()
 {
 
-    CodeTeacher A1("Arhan", "CSE", 49000, 99);
+    CodeTeacher A1("Rohan", "CSE", 49000, 99);
     A1.display();
 
     return 0;

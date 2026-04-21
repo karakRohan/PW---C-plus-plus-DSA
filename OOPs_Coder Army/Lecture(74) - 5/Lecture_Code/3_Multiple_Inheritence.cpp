@@ -62,10 +62,10 @@ public:
 
 int main()
 {
-    // CodeTeacher A1("Arhan", "CS", 81);
-    // A1.showCase();
+    CodeTeacher A1("Rohan", "CS", 1000000);
+    A1.showCase();
 
-    CodeTeacher A1;
+    // CodeTeacher A1;
 
     return 0;
 }

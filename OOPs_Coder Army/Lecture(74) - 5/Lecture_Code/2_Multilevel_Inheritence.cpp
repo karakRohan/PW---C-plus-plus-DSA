@@ -13,7 +13,7 @@ public:
     }
 };
 
-class Employee : public Person
+class Employee : public Person // Derived class of Person
 {
 protected:
     int salary;
@@ -25,7 +25,7 @@ public:
     }
 };
 
-class Manager : public Employee
+class Manager : public Employee // Derived class of Employee and Grandchild of Person
 {
 public:
     string department;
@@ -45,7 +45,7 @@ public:
 
 int main()
 {
-    Manager A1("Arhan", 200, "Finance");
+    Manager A1("Rohan", 200, "Finance");
     A1.introduce();
     A1.monthly_salary();
     A1.work();

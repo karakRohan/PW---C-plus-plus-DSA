@@ -1,3 +1,5 @@
+// Question Link : - https://www.hackerrank.com/challenges/primsmstsub/problem
+
 #include <bits/stdc++.h>
 #define ll long long int
 #define pp pair<int, int>
@@ -12,7 +14,8 @@ void add_edge(int u, int v, int wt, bool bidir=true) {
 }
 
 ll prims(int src, int n) {
-    priority_queue<pp, vector<pp> , greater<pp> > pq; // {wt, node} , pp is pair<int, int>
+    // fibbonaci heap can be used to optimize the time complexity to O(E + VlogV) from O(ElogV) of binary heap
+    priority_queue<pp, vector<pp> , greater<pp> > pq; // {wt, node} , pp is pair<int, int> 
     unordered_set<int> vis;
     vector<int> par(n+1);
     unordered_map<int, int> mp;

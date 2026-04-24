@@ -3,7 +3,6 @@ using namespace std;
 
 
 int ans;
-
 bool canWeGo(int n, int i, int j, vector<vector<int> > &grid){
     return i>=0 && j>=0 && i<n && j<n && grid[i][j] == 0;
 }

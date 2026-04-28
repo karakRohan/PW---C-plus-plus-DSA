@@ -20,18 +20,23 @@ public:
     }
 };
 */
+
+
 int main()
 {
     try
     {
-        int *p = new int[1000000000000];
+        size_t n = 1000000000000ULL;   // correct type
         
-        cout << "Memory allocation is successfully\n";
+        int *p = new int[n];
+        
+        cout << "Memory allocation is successful\n";
+        
         delete[] p;
     }
     catch (const bad_alloc &e)
     {
-        cout << "Exception Occured due to line 9: " << e.what() << endl;
+        cout << "Exception Occured: " << e.what() << endl;
     }
     return 0;
 }

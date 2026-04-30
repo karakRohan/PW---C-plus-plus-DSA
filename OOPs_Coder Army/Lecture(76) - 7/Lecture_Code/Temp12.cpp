@@ -12,7 +12,6 @@ int main() {
     }
 }*/
 
-
 #include <iostream>
 #include <new>   // for bad_alloc
 using namespace std;

@@ -17,3 +17,24 @@ int calc(vector<vector<int>> &compat, int mask) {
     return ans;
 }
 
+int precompute(vector<vector<int>> &compat, int n) {
+
+    for(int mask = 1; mask < (1 << n) - 1; mask++) {
+        sums[mask] = calc(compat, mask);
+    }
+}
+
+int f(vector<vector<int>> &compat, int mask) {
+
+    if(mask == 0) return 0;
+
+    if(dp[mask] != INT_MAX) return dp[mask];
+
+    int ans = 0;
+
+    for(int g = mask; g != 0; g = ((g - 1) & mask)) {
+        ans = max(ans, sums[g] + f(compat, mask ^ g));
+    }
+
+    return dp[mask] = ans;
+}

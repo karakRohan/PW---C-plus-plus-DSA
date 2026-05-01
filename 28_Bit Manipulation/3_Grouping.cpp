@@ -63,7 +63,6 @@ int main() {
 */
 
 
-
 // question link: https://atcoder.jp/contests/dp/tasks/dp_u
 #include <bits/stdc++.h>
 using namespace std;

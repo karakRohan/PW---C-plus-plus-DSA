@@ -90,7 +90,6 @@ ll calc(vector<vector<ll>> &compat, ll mask) {
 }
 
 
-
 void precompute(vector<vector<ll>> &compat, ll n) {
 
     for(ll mask = 1; mask < (1 << n); mask++) {

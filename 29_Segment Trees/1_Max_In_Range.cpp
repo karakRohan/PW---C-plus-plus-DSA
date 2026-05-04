@@ -4,7 +4,8 @@ vector<int> st; // st = segment tree
 
 void buildSegmentTree(int arr[], int i, int lo, int hi)
 {
-    if (lo == hi)
+    // Base case
+    if (lo == hi) // leaf node
     {
         st[i] = arr[lo];
         return;

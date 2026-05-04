@@ -17,9 +17,9 @@ void buildSegmentTree(int arr[], int i, int lo, int hi)
 }
 int getmax(int i, int lo, int hi, int &l, int &r)
 {
-    if (l > hi || r < lo)
+    if (l > hi || r < lo) // no overlap
         return INT_MIN;
-    if (lo >= l && hi <= r)
+    if (lo >= l && hi <= r) // complete overlap
         return st[i];
     int mid = lo + (hi - lo) / 2;
     int leftMax = getmax(2 * i + 1, lo, mid, l, r);
@@ -42,4 +42,4 @@ int main()
         cout << endl
              << getmax(0, 0, n - 1, l, r);
     }
-}
+} 

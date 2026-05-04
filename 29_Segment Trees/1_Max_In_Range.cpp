@@ -9,7 +9,7 @@ void buildSegmentTree(int arr[], int i, int lo, int hi)
         st[i] = arr[lo];
         return;
     }
-    int mid = lo + (hi - lo) / 2;
+    int mid = lo + (hi - lo) / 2; // (lo + hi) / 2
     buildSegmentTree(arr, 2 * i + 1, lo, mid);     // left subtree
     buildSegmentTree(arr, 2 * i + 2, mid + 1, hi); // right subtree
     st[i] = max(st[2 * i + 1], st[2 * i + 2]);

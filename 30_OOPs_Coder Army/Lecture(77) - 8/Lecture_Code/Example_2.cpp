@@ -7,8 +7,8 @@ int main()
     ofstream fout;
     fout.open("z1.txt");
 
-    fout << "Hello Pakistan\n";
-    fout << "Hello Arhan\n";
+    fout << "Hello Bharat\n";
+    fout << "Hello Rohan\n";
     fout << "Hello Bhai\n";
 
     fout.close();

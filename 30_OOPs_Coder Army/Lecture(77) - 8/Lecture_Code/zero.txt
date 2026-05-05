@@ -1,4 +1,4 @@
 Original Data
-10 11 4 7 2 
+5 3 5 4 6 
 Sorted Data
-2 4 7 10 11 
+3 4 5 5 6 

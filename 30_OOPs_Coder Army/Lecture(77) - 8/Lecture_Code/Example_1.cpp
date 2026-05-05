@@ -16,7 +16,7 @@ int main()
     fout.open("zero.txt");
 
     fout << "Original Data\n";
-    for (int i = 0; i < arr.size(); i++)
+    for (int i = 0; i < arr.size(); i++)  
     {
         fout << arr[i] << " ";
     }
